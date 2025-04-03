@@ -14,9 +14,11 @@ def main():
     difficulty = int(difficulty) - 1
     difficulties = ["easy", "medium", "hard",]
     difficulty_num = 4 + difficulty * 2
+    # Fetches word from API
     word = requests.get(f"https://random-word-api.vercel.app/api?words=1&length={difficulty_num}").json()[0]
     print(f"You chose the {difficulties[difficulty]} difficulty. Let's begin!\n\n")
 
+    # Instructions
     print(f"""Here's how you play!
     You will be given 7 chances to guess a word.
     If you guess a letter in the word, it will be revealed in the position that it is in the word
@@ -55,6 +57,7 @@ def main():
                 guesses += 1
             guessed_letters.append(guess)
 
+        # Optional hint system
         elif guess == "help":
             if has_helped is False:
                 while True:
