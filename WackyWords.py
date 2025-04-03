@@ -20,9 +20,10 @@ def main():
 
     # Instructions
     print(f"""Here's how you play!
-    You will be given 7 chances to guess a word.
+    You will be guessing letters to figure out a word.
     If you guess a letter in the word, it will be revealed in the position that it is in the word
-    when guessing, please make sure to type only one lowercase letter.
+    When guessing, please make sure to type only one lowercase letter.
+    Be careful! You can only get 7 guesses wrong before you lose!
     If you accidentally guess more than one letter or an uppercase letter, you will not lose a guess.
     You may alternatively type 'help' to get a letter revealed to you. You may only use this once.
     Good luck!\n\n""")
@@ -42,7 +43,7 @@ def main():
             print(f"Congratulations! You guessed the word!\nYour word was {word}")
             break
 
-        print(f"The word so far: {word_so_far}\nIncorrect guesses remaining: {7-guesses}")
+        print(f"The word so far: {word_so_far}\nMistakes remaining: {7-guesses}")
         guess = input("What's your Guess? ")
 
         if len(guess) == 1 and guess.islower():
